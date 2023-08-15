@@ -6,8 +6,7 @@ using UnityEngine.UI;
 
 public class StateObjective : MonoBehaviour
 {
-    private string objToFindName;
-    public TMP_Text _objectiveOne;
+    public TextMeshProUGUI _objectiveOne;
 
     private void Update()
     {
@@ -16,7 +15,6 @@ public class StateObjective : MonoBehaviour
 
     public void SetObjectiveText()
     {
-        objToFindName = GameManager.Instance.objectiveOne;
-        _objectiveOne.text = objToFindName;
+        _objectiveOne.text = GameManager.Instance.objectiveOne;
     }
 }
