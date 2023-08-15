@@ -580,6 +580,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1212605297
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1212605298}
+  m_Layer: 0
+  m_Name: ObjectHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1212605298
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1212605297}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1769035312}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1237950710
 GameObject:
   m_ObjectHideFlags: 0
@@ -592,6 +623,7 @@ GameObject:
   - component: {fileID: 1237950714}
   - component: {fileID: 1237950713}
   - component: {fileID: 1237950712}
+  - component: {fileID: 1237950715}
   m_Layer: 0
   m_Name: blue cube
   m_TagString: inter
@@ -685,6 +717,33 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1237950710}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &1237950715
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1237950710}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1389625491
 GameObject:
   m_ObjectHideFlags: 0
@@ -1102,6 +1161,13 @@ MonoBehaviour:
   redObj: {fileID: 732970202}
   blueObj: {fileID: 1494380531}
   yellowObj: {fileID: 355861056}
+  _objectHolder: {fileID: 1212605298}
+--- !u!4 &1769035312 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2532236169890450773, guid: c24f7dd7a13698d458028f437b6205ee,
+    type: 3}
+  m_PrefabInstance: {fileID: 5560720166013693480}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1969786254
 GameObject:
   m_ObjectHideFlags: 0
@@ -1220,6 +1286,7 @@ GameObject:
   - component: {fileID: 2002209283}
   - component: {fileID: 2002209282}
   - component: {fileID: 2002209281}
+  - component: {fileID: 2002209284}
   m_Layer: 0
   m_Name: yellow cube
   m_TagString: inter
@@ -1313,6 +1380,33 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2002209279}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &2002209284
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2002209279}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2014491998
 GameObject:
   m_ObjectHideFlags: 0
@@ -1459,6 +1553,7 @@ GameObject:
   - component: {fileID: 2043126256}
   - component: {fileID: 2043126255}
   - component: {fileID: 2043126254}
+  - component: {fileID: 2043126257}
   m_Layer: 0
   m_Name: red cube
   m_TagString: inter
@@ -1552,6 +1647,33 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2043126252}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &2043126257
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043126252}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2116313923
 GameObject:
   m_ObjectHideFlags: 0
@@ -1634,6 +1756,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerTMP
       objectReference: {fileID: 0}
+    - target: {fileID: 2532236169890450773, guid: c24f7dd7a13698d458028f437b6205ee,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2532236169890450773, guid: c24f7dd7a13698d458028f437b6205ee,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5533501377559047216, guid: c24f7dd7a13698d458028f437b6205ee,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1686,7 +1818,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 2532236169890450773, guid: c24f7dd7a13698d458028f437b6205ee,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1212605298}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4153189366254100448, guid: c24f7dd7a13698d458028f437b6205ee,
         type: 3}
