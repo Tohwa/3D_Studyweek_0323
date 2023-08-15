@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
         SetObjToFind();
     }
 
-    private void SetObjToFind()
+    public void SetObjToFind()
     {
         toFindIndex = rnd.Next(0, itemlist.Count);
         objectiveOne = itemlist[toFindIndex].name;

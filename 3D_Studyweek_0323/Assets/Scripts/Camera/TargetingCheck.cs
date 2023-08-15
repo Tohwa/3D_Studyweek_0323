@@ -1,11 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class TargetingCheck : MonoBehaviour
 {
+    [SerializeField] private GameObject redObj;
+    [SerializeField] private GameObject blueObj;
+    [SerializeField] private GameObject yellowObj;
+
     public void OnInteractHit(InputAction.CallbackContext ctx)
     {
         if (ctx.started)
@@ -17,10 +22,33 @@ public class TargetingCheck : MonoBehaviour
             {
                 if (hit.transform.tag == "inter" && GameManager.Instance.objectiveOne == hit.transform.name)
                 {
-                    Debug.Log("You can interact with this item!");
+                    hit.transform.gameObject.SetActive(false);
+                }
+                else if(hit.transform.tag == "NPC")
+                {
+                    ClearObjective();
                 }
 
             }
+        }
+    }
+
+    private void ClearObjective()
+    {
+        switch (GameManager.Instance.objectiveOne)
+        {
+            case "red cube":
+                redObj.SetActive(true);
+                GameManager.Instance.SetObjToFind();
+                break;
+            case "blue cube":
+                blueObj.SetActive(true);
+                GameManager.Instance.SetObjToFind();
+                break;
+            case "yellow cube":
+                yellowObj.SetActive(true);
+                GameManager.Instance.SetObjToFind();
+                break;
         }
     }
 }
