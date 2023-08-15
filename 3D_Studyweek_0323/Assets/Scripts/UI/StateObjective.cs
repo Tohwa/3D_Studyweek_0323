@@ -16,7 +16,7 @@ public class StateObjective : MonoBehaviour
 
     public void SetObjectiveText()
     {
-        objToFindName = InteractableList.objectiveOne;
+        objToFindName = GameManager.Instance.objectiveOne;
         _objectiveOne.text = objToFindName;
     }
 }

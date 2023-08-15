@@ -15,7 +15,7 @@ public class TargetingCheck : MonoBehaviour
             Physics.Raycast(transform.position, transform.forward, out hit, 3);
             if (hit.collider)
             {
-                if (hit.transform.tag == "inter" && InteractableList.objectiveOne == hit.transform.name)
+                if (hit.transform.tag == "inter" && GameManager.Instance.objectiveOne == hit.transform.name)
                 {
                     Debug.Log("You can interact with this item!");
                 }
