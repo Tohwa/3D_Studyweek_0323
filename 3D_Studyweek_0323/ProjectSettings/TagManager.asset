@@ -9,6 +9,7 @@ TagManager:
   - startPoint
   - endPoint
   - collector
+  - gameUI
   layers:
   - Default
   - TransparentFX

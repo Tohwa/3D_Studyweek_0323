@@ -72,6 +72,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void OpenItemList(InputAction.CallbackContext ctx)
+    {
+        if(ctx.started)
+        {
+            GameManager.Instance.gameUI.ShowItemList();
+        }
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         
