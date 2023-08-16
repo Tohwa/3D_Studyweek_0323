@@ -580,6 +580,59 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &894610998
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 894610999}
+  - component: {fileID: 894611000}
+  m_Layer: 3
+  m_Name: ItemDropOff
+  m_TagString: collector
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &894610999
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 894610998}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1106294823}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &894611000
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 894610998}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.7636002, y: 3.7120452, z: 0.69823074}
+  m_Center: {x: -0.027721692, y: 2.3866255, z: 0.04503708}
 --- !u!1 &963486739
 GameObject:
   m_ObjectHideFlags: 0
@@ -700,7 +753,7 @@ GameObject:
   - component: {fileID: 1106294820}
   - component: {fileID: 1106294824}
   - component: {fileID: 1106294825}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Boat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -787,11 +840,12 @@ Transform:
   m_GameObject: {fileID: 1106294819}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 29.38, y: 0, z: -27}
-  m_LocalScale: {x: 5, y: 0.5, z: 10}
+  m_LocalPosition: {x: 29.19, y: 0, z: -27}
+  m_LocalScale: {x: 7.5, y: 0.5, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1389625495}
+  - {fileID: 894610999}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &1106294824
@@ -835,9 +889,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _boatRB: {fileID: 1106294824}
   _npcTransform: {fileID: 1389625495}
-  _playerTransform: {fileID: 1876092650}
   speed: 10
-  isRidingBoat: 0
 --- !u!1 &1237950710
 GameObject:
   m_ObjectHideFlags: 0
@@ -1146,7 +1198,7 @@ Transform:
   m_GameObject: {fileID: 1389625491}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.06400032, y: 2.542, z: -0.2870001}
+  m_LocalPosition: {x: 0.251, y: 2.542, z: -0.395}
   m_LocalScale: {x: 0.2, y: 2, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1521,12 +1573,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 8.506847, y: 1, z: 1}
   m_Center: {x: 0.27775955, y: 0, z: 0}
---- !u!4 &1876092650 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5533501377559047216, guid: c24f7dd7a13698d458028f437b6205ee,
-    type: 3}
-  m_PrefabInstance: {fileID: 5560720166013693480}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1969786254
 GameObject:
   m_ObjectHideFlags: 0
@@ -2093,17 +2139,17 @@ PrefabInstance:
     - target: {fileID: 5533501377559047216, guid: c24f7dd7a13698d458028f437b6205ee,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 21.98
+      value: 18.05
       objectReference: {fileID: 0}
     - target: {fileID: 5533501377559047216, guid: c24f7dd7a13698d458028f437b6205ee,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.59
+      value: 1.67
       objectReference: {fileID: 0}
     - target: {fileID: 5533501377559047216, guid: c24f7dd7a13698d458028f437b6205ee,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -21.38
+      value: -14.63
       objectReference: {fileID: 0}
     - target: {fileID: 5533501377559047216, guid: c24f7dd7a13698d458028f437b6205ee,
         type: 3}
@@ -2150,6 +2196,11 @@ PrefabInstance:
       propertyPath: moveSpeed
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8741699426874576679, guid: c24f7dd7a13698d458028f437b6205ee,
+        type: 3}
+      propertyPath: _boatTrigger
+      value: 
+      objectReference: {fileID: 1106294825}
     - target: {fileID: 8890022664315551822, guid: c24f7dd7a13698d458028f437b6205ee,
         type: 3}
       propertyPath: redObj
