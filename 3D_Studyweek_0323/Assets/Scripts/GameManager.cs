@@ -22,9 +22,12 @@ public class GameManager : MonoBehaviour
 
     [Header("Booleans")]
     public bool winCondition;
+    public bool loseCondition;
 
     [Header("Floats")]
     private int toFindIndex;
+    public float timerTime { get; private set; } = 120f;
+    public float timerTimeRounded;
 
     [Header("Strings")]
     public string objectiveOne;
@@ -58,6 +61,17 @@ public class GameManager : MonoBehaviour
         }
 
         SetObjToFind();
+    }
+
+    private void Update()
+    {
+        timerTime -= Time.deltaTime;
+        timerTimeRounded = MathF.Round(timerTime);
+        gameUI.UpdateTimer();
+        if( timerTime < 0)
+        {
+            loseCondition = true;
+        }
     }
 
     public void SetObjToFind()

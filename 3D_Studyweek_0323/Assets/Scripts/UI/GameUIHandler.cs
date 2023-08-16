@@ -7,6 +7,7 @@ public class GameUIHandler : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI objectivesText;
     [SerializeField] private TextMeshProUGUI itemListText;
+    [SerializeField] private TextMeshProUGUI timerText;
     [SerializeField] private GameObject itemList;
     private void Start()
     {
@@ -48,5 +49,10 @@ public class GameUIHandler : MonoBehaviour
         {
             itemListText.text = $"{itemListText.text}\n{GameManager.Instance.itemlist[i].name}";
         }
+    }
+
+    public void UpdateTimer()
+    {
+        timerText.text = $"Timer: {GameManager.Instance.timerTimeRounded}";
     }
 }
