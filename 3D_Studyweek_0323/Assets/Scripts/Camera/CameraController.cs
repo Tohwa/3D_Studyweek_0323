@@ -13,6 +13,7 @@ public enum InputSource
 public class CameraController : MonoBehaviour
 {
     #region Fields
+    [SerializeField] private Rigidbody _boatRB;
     [SerializeField] private float mouseSensitivity;
     [SerializeField] private float controllerSensitivity;
 
@@ -29,25 +30,28 @@ public class CameraController : MonoBehaviour
 
     private void Update()
     {
-        switch (currentInputSource)
+        if(_boatRB.velocity.magnitude < 0.1f)
         {
-            case InputSource.Mouse:
-                angle.x += -cameraInput.y * Time.deltaTime * mouseSensitivity;
-                angle.y += cameraInput.x * Time.deltaTime * mouseSensitivity;
-                break;
+            switch (currentInputSource)
+            {
+                case InputSource.Mouse:
+                    angle.x += -cameraInput.y * Time.deltaTime * mouseSensitivity;
+                    angle.y += cameraInput.x * Time.deltaTime * mouseSensitivity;
+                    break;
 
-            case InputSource.Controller:
-                angle.x += -cameraInput.y * Time.deltaTime * controllerSensitivity;
-                angle.y += cameraInput.x * Time.deltaTime * controllerSensitivity;
-                break;
+                case InputSource.Controller:
+                    angle.x += -cameraInput.y * Time.deltaTime * controllerSensitivity;
+                    angle.y += cameraInput.x * Time.deltaTime * controllerSensitivity;
+                    break;
 
-            case InputSource.None:
-                // No input, don't update camera angles
-                break;
-        }
+                case InputSource.None:
+                    // No input, don't update camera angles
+                    break;
+            }
 
-        angle.x = Mathf.Clamp(angle.x, -85, 85);
-        transform.eulerAngles = angle;
+            angle.x = Mathf.Clamp(angle.x, -85, 85);
+            transform.eulerAngles = angle;
+        }        
     }
 
     public void OnLook(InputAction.CallbackContext ctx)

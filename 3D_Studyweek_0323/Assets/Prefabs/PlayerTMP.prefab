@@ -197,7 +197,19 @@ MonoBehaviour:
     m_ActionId: 4804d93a-a336-4b95-a709-3819b26af754
     m_ActionName: Player/Look[/Mouse/delta]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8890022664315551822}
+        m_TargetAssemblyTypeName: TargetingCheck, Assembly-CSharp
+        m_MethodName: OnInteractHit
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: ed48ed41-aa48-4827-873f-86cef8a59b0d
     m_ActionName: Player/Fire[/Mouse/leftButton]
   - m_PersistentCalls:
@@ -282,6 +294,37 @@ MonoBehaviour:
   groundLayers:
     serializedVersion: 2
     m_Bits: 8
+--- !u!1 &3901978693395157061
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3606066035845220043}
+  m_Layer: 0
+  m_Name: ObjectHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3606066035845220043
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3901978693395157061}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2532236169890450773}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4153189366254100448
 GameObject:
   m_ObjectHideFlags: 0
@@ -295,6 +338,7 @@ GameObject:
   - component: {fileID: 2845911409681275142}
   - component: {fileID: 8702227870691005798}
   - component: {fileID: 687985466561273789}
+  - component: {fileID: 8890022664315551822}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -311,10 +355,11 @@ Transform:
   m_GameObject: {fileID: 4153189366254100448}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.58, z: 0.12}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 3606066035845220043}
   m_Father: {fileID: 5533501377559047216}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &8108878485761599915
@@ -434,3 +479,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseSensitivity: 25
   controllerSensitivity: 50
+--- !u!114 &8890022664315551822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4153189366254100448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 600aaaaf9199b174e9b2b1eddcefa5f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  redObj: {fileID: 0}
+  blueObj: {fileID: 0}
+  yellowObj: {fileID: 0}
+  _objectHolder: {fileID: 3606066035845220043}
