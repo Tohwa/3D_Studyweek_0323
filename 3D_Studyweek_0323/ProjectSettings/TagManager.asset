@@ -6,6 +6,9 @@ TagManager:
   tags:
   - inter
   - NPC
+  - startPoint
+  - endPoint
+  - collector
   layers:
   - Default
   - TransparentFX

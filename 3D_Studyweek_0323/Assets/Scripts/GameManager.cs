@@ -1,17 +1,32 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Rendering;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    #region Fields
     public static GameManager Instance { get; private set; }
     public PlayerController player { get; private set; }
+
+    public GameObject _testOver;
+
+    [Header("Lists & Arrays")]
     public List<GameObject> itemlist = new List<GameObject>();
     private Array taggedItems;
-    System.Random rnd = new System.Random();
+    
+    private System.Random rnd = new System.Random();
+
+    [Header("Booleans")]
+    public bool winCondition;
+
+    [Header("Floats")]
     private int toFindIndex;
+
+    [Header("Strings")]
     public string objectiveOne;
+    #endregion
 
     private void Awake()
     {
@@ -22,11 +37,14 @@ public class GameManager : MonoBehaviour
         }
         Instance = this;
         DontDestroyOnLoad(this);
+
     }
 
 
     private void Start()
     {
+        _testOver.SetActive(false);
+
         taggedItems = GameObject.FindGameObjectsWithTag("inter");
 
         foreach (GameObject obj in taggedItems)
@@ -43,5 +61,4 @@ public class GameManager : MonoBehaviour
         objectiveOne = itemlist[toFindIndex].name;
         itemlist.Remove(itemlist[toFindIndex]);
     }
-
 }
