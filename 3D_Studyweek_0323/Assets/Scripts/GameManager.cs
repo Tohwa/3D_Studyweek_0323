@@ -10,11 +10,16 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
     public PlayerController player { get; private set; }
 
+    public GameObject _testOver;
+
     [Header("Lists & Arrays")]
     public List<GameObject> itemlist = new List<GameObject>();
     private Array taggedItems;
     
     private System.Random rnd = new System.Random();
+
+    [Header("Booleans")]
+    public bool winCondition;
 
     [Header("Floats")]
     private int toFindIndex;
@@ -32,11 +37,14 @@ public class GameManager : MonoBehaviour
         }
         Instance = this;
         DontDestroyOnLoad(this);
+
     }
 
 
     private void Start()
     {
+        _testOver.SetActive(false);
+
         taggedItems = GameObject.FindGameObjectsWithTag("inter");
 
         foreach (GameObject obj in taggedItems)

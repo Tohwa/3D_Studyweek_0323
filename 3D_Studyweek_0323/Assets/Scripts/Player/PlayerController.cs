@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     #region Fields
     [Header("Components")]
     [SerializeField] private Rigidbody _rb;
+    [SerializeField] private Rigidbody _boatRB;
     [SerializeField] private Transform _target;
 
     [Header("Floats")]
@@ -33,10 +34,13 @@ public class PlayerController : MonoBehaviour
     {
 
         // Bewegung
-        Vector3 movement = new Vector3(movementInput.x, 0f, movementInput.y) * moveSpeed * Time.deltaTime;
-        movement = Quaternion.Euler(0, Camera.main.transform.eulerAngles.y, 0) * movement;
-        movement = Vector3.ClampMagnitude(movement, 1) * 3;
-        _rb.MovePosition(transform.position + transform.TransformDirection(movement));
+        if (_boatRB.velocity.magnitude < 0.1f)
+        {
+            Vector3 movement = new Vector3(movementInput.x, 0f, movementInput.y) * moveSpeed * Time.deltaTime;
+            movement = Quaternion.Euler(0, Camera.main.transform.eulerAngles.y, 0) * movement;
+            movement = Vector3.ClampMagnitude(movement, 1) * 3;
+            _rb.MovePosition(transform.position + transform.TransformDirection(movement));
+        }
 
         RaycastHit hit;
         if (Physics.Raycast(
@@ -56,7 +60,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext ctx)
     {
-            movementInput = ctx.ReadValue<Vector2>();
+        movementInput = ctx.ReadValue<Vector2>();
     }
 
     public void OnJump(InputAction.CallbackContext ctx)
@@ -66,5 +70,10 @@ public class PlayerController : MonoBehaviour
             grounded = false;
             _rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        
     }
 }

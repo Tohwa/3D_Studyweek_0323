@@ -5,27 +5,25 @@ using UnityEngine;
 public class BoatTriggerActions : MonoBehaviour
 {
     #region Fields
+    [Header("GameObjects")]
+    [SerializeField] private GameObject _player;
+
     [Header("Components")]
     [SerializeField] private Rigidbody _boatRB;
-    [SerializeField] private Transform _npcTransform;
 
     [Header("Floats")]
-    [SerializeField] private float speed;
+    public float speed;
 
-    private Vector3 npcLocalOffset;
 
     #endregion
 
     private void Start()
     {
+        if(_player.transform.parent != null)
+        {
+            _player.GetComponent<Rigidbody>().isKinematic = true;
+        }
         _boatRB.velocity = transform.forward * speed;
-
-        npcLocalOffset = _npcTransform.localPosition;
-    }
-
-    private void Update()
-    {
-        _npcTransform.localPosition = npcLocalOffset;
     }
 
     private void OnTriggerEnter(Collider cldr)
@@ -33,6 +31,21 @@ public class BoatTriggerActions : MonoBehaviour
         if (cldr.CompareTag("endPoint"))
         {
             _boatRB.velocity = Vector3.zero;
+        }
+
+        if(cldr.CompareTag("startPoint") && GameManager.Instance.winCondition)
+        {
+            GameManager.Instance._testOver.SetActive(true);
+            Time.timeScale = 0f;
+        }
+    }
+
+    private void OnTriggerExit(Collider cldr)
+    {
+        if (cldr.CompareTag("Player"))
+        {
+            _player.transform.parent = null;
+            _player.GetComponent<Rigidbody>().isKinematic = false;
         }
     }
 }

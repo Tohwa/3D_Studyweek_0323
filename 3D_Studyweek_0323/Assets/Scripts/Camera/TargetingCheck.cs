@@ -24,6 +24,7 @@ public class TargetingCheck : MonoBehaviour
         {
             if(grabbedRB)
             {
+                grabbedRB.GetComponent<Collider>().enabled = true;
                 grabbedRB.isKinematic = false;
                 grabbedRB = null;
             }
@@ -36,41 +37,16 @@ public class TargetingCheck : MonoBehaviour
                 {
                     if (hit.transform.tag == "inter" && GameManager.Instance.objectiveOne == hit.transform.name)
                     {
-                        //hit.transform.gameObject.SetActive(false);
                         grabbedRB = hit.collider.gameObject.GetComponent<Rigidbody>();
+                        grabbedRB.GetComponent<Collider>().enabled = false;
 
                         if (grabbedRB)
                         {
                             grabbedRB.isKinematic = true;
                         }
                     }
-                    else if (hit.transform.tag == "NPC")
-                    {
-                        ClearObjective();
-                    }
-
                 }
-            }
-            
-        }
-    }
-
-    private void ClearObjective()
-    {
-        switch (GameManager.Instance.objectiveOne)
-        {
-            case "red cube":
-                redObj.SetActive(true);
-                GameManager.Instance.SetObjToFind();
-                break;
-            case "blue cube":
-                blueObj.SetActive(true);
-                GameManager.Instance.SetObjToFind();
-                break;
-            case "yellow cube":
-                yellowObj.SetActive(true);
-                GameManager.Instance.SetObjToFind();
-                break;
+            }            
         }
     }
 }
