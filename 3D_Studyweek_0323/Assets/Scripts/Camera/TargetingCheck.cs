@@ -39,7 +39,8 @@ public class TargetingCheck : MonoBehaviour
                     {
                         grabbedRB = hit.collider.gameObject.GetComponent<Rigidbody>();
                         grabbedRB.GetComponent<Collider>().enabled = false;
-                        GameManager.Instance.gameUI.SetObjectiveFound(); //added by finn
+                        //added by finn
+                        GameManager.Instance.gameUI.SetObjectiveFound();
 
                         if (grabbedRB)
                         {
