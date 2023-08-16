@@ -1,17 +1,30 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Rendering;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    #region Fields
     public static GameManager Instance { get; private set; }
     public PlayerController player { get; private set; }
+
+    [Header("Components")]
+    [SerializeField] private Rigidbody _boatRB;
+
+    [Header("Lists & Arrays")]
     public List<GameObject> itemlist = new List<GameObject>();
     private Array taggedItems;
-    System.Random rnd = new System.Random();
+    
+    private System.Random rnd = new System.Random();
+
+    [Header("Floats")]
     private int toFindIndex;
+    [SerializeField] private float speed;
+    [Header("Strings")]
     public string objectiveOne;
+    #endregion
 
     private void Awake()
     {
@@ -35,6 +48,8 @@ public class GameManager : MonoBehaviour
         }
 
         SetObjToFind();
+
+        _boatRB.velocity = transform.forward * Time.deltaTime * speed;
     }
 
     public void SetObjToFind()
@@ -43,5 +58,4 @@ public class GameManager : MonoBehaviour
         objectiveOne = itemlist[toFindIndex].name;
         itemlist.Remove(itemlist[toFindIndex]);
     }
-
 }
