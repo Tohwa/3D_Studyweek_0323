@@ -15,6 +15,7 @@ public class TargetingCheck : MonoBehaviour
         if (grabbedRB)
         {
             grabbedRB.MovePosition(_objectHolder.transform.position);
+
         }
     }
 
@@ -27,6 +28,7 @@ public class TargetingCheck : MonoBehaviour
                 grabbedRB.GetComponent<Collider>().enabled = true;
                 grabbedRB.isKinematic = false;
                 grabbedRB = null;
+                GameManager.Instance.gameUI.ResetObjective();
             }
             else
             {
@@ -39,8 +41,7 @@ public class TargetingCheck : MonoBehaviour
                     {
                         grabbedRB = hit.collider.gameObject.GetComponent<Rigidbody>();
                         grabbedRB.GetComponent<Collider>().enabled = false;
-                        //added by finn
-                        GameManager.Instance.gameUI.SetObjectiveFound();
+                        GameManager.Instance.gameUI.SetObjective();
 
                         if (grabbedRB)
                         {
@@ -48,7 +49,9 @@ public class TargetingCheck : MonoBehaviour
                         }
                     }
                 }
-            }            
+
+
+            }
         }
     }
 }
