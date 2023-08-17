@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1706.6667
     height: 922.6667
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Hierarchy
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 119
+  controlID: 55
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -314,9 +314,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 6ccdffff
-      m_LastClickedID: -12948
-      m_ExpandedIDs: 8ccdffff28fbffff
+      m_SelectedIDs: c8cdffff
+      m_LastClickedID: -12856
+      m_ExpandedIDs: 48c6ffffc8cdffff28fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -405,7 +405,7 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: 0, y: 0}
+      snapOffset: {x: 0, y: 24.666666}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: unity-scene-view-toolbar
@@ -736,9 +736,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 48.166794, y: -93.638916, z: 170.66843}
+    m_Target: {x: 428.82068, y: 478.1843, z: -49.82135}
     speed: 2
-    m_Value: {x: 48.166794, y: -93.638916, z: 170.66843}
+    m_Value: {x: 428.82068, y: 478.1843, z: -49.82135}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -784,20 +784,20 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.2267956, y: 0.09208297, z: -0.02176292, w: 0.9695435}
+    m_Target: {x: -0.22550611, y: 0.048488166, z: 0.011052359, w: 0.973189}
     speed: 2
-    m_Value: {x: 0.22674984, y: 0.09206439, z: -0.021758528, w: 0.9693479}
+    m_Value: {x: -0.22545843, y: 0.048477914, z: 0.011050022, w: 0.97298324}
   m_Size:
-    m_Target: 130.43187
+    m_Target: 131.38525
     speed: 2
-    m_Value: 130.43187
+    m_Value: 131.38525
   m_Ortho:
     m_Target: 0
     speed: 2
     m_Value: 0
   m_CameraSettings:
-    m_Speed: 2
-    m_SpeedNormalized: 1
+    m_Speed: 1.7601203
+    m_SpeedNormalized: 0.8800001
     m_SpeedMin: 0.001
     m_SpeedMax: 2
     m_EasingEnabled: 1
