@@ -11,13 +11,12 @@ public class GameManager : MonoBehaviour
     public PlayerController player { get; private set; }
 
     public GameUIHandler gameUI { get; private set; }
-
-    public GameObject _testOver;
+    public BoatTriggerActions boatScript { get; private set; }
 
     [Header("Lists & Arrays")]
     public List<GameObject> itemlist = new List<GameObject>();
     private Array taggedItems;
-    
+
     private System.Random rnd = new System.Random();
 
     [Header("Booleans")]
@@ -50,8 +49,7 @@ public class GameManager : MonoBehaviour
     {
         player = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
         gameUI = GameObject.FindWithTag("gameUI").GetComponent<GameUIHandler>();
-
-        _testOver.SetActive(false);
+        boatScript = GameObject.FindWithTag("boat").GetComponent<BoatTriggerActions>();
 
         taggedItems = GameObject.FindGameObjectsWithTag("inter");
 
@@ -65,12 +63,24 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        timerTime -= Time.deltaTime;
-        timerTimeRounded = MathF.Round(timerTime);
-        gameUI.UpdateTimer();
-        if( timerTime < 0)
+        if (boatScript._boatRB.velocity.magnitude == 0)
+        {
+            timerTime -= Time.deltaTime;
+            timerTimeRounded = MathF.Round(timerTime);
+            gameUI.UpdateTimer();
+
+        }
+        if (timerTime < 0)
         {
             loseCondition = true;
+        }
+
+        if (loseCondition)
+        {
+            #if UNITY_EDITOR
+                UnityEditor.EditorApplication.ExitPlaymode();
+#endif
+            Application.Quit();
         }
     }
 
@@ -78,7 +88,7 @@ public class GameManager : MonoBehaviour
     {
         toFindIndex = rnd.Next(0, itemlist.Count);
         objectiveOne = itemlist[toFindIndex].name;
-        gameUI.SetNewObjective();
+        gameUI.ResetObjective();
         itemlist.Remove(itemlist[toFindIndex]);
     }
 }

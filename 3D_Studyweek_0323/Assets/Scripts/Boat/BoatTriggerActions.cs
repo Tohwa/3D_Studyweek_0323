@@ -9,10 +9,13 @@ public class BoatTriggerActions : MonoBehaviour
     [SerializeField] private GameObject _player;
 
     [Header("Components")]
-    [SerializeField] private Rigidbody _boatRB;
+    public Rigidbody _boatRB;
 
     [Header("Floats")]
     public float speed;
+
+    [Header("Bools")]
+    public bool startTimer;
 
 
     #endregion
@@ -30,12 +33,14 @@ public class BoatTriggerActions : MonoBehaviour
     {
         if (cldr.CompareTag("endPoint"))
         {
+            startTimer = true;
+
             _boatRB.velocity = Vector3.zero;
         }
 
         if(cldr.CompareTag("startPoint") && GameManager.Instance.winCondition)
         {
-            GameManager.Instance._testOver.SetActive(true);
+            GameManager.Instance.gameUI.ActivateWinText();
             Time.timeScale = 0f;
         }
     }

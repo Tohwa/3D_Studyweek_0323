@@ -10,6 +10,7 @@ TagManager:
   - endPoint
   - collector
   - gameUI
+  - boat
   layers:
   - Default
   - TransparentFX
