@@ -268,6 +268,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 3b348bc3-001d-4d5c-ac0b-effa032f707c
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8741699426874576679}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OpenItemList
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: ac9ac636-5836-422c-8d46-dcf3f8e1ede6
+    m_ActionName: Player/OpenItemList[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -286,6 +302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rb: {fileID: 7812101022880852189}
+  _boatRB: {fileID: 0}
   _target: {fileID: 5533501377559047216}
   moveSpeed: 5
   jumpForce: 2
@@ -477,6 +494,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1ab64113d15b28438dbb020734368ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _boatRB: {fileID: 0}
   mouseSensitivity: 25
   controllerSensitivity: 50
 --- !u!114 &8890022664315551822

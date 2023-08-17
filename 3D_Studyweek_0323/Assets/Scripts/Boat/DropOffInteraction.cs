@@ -12,6 +12,8 @@ public class DropOffInteraction : MonoBehaviour
             if(GameManager.Instance.itemlist.Count > 0)
             {
                 GameManager.Instance.SetObjToFind();
+                //added by finn
+                GameManager.Instance.gameUI.UpdateItemList();
             }            
         }
     }
