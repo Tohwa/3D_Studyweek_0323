@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Floats")]
     private int toFindIndex;
-    public float timerTime { get; private set; } = 120f;
+    public float timerTime { get; private set; } = 300f;
     public float timerTimeRounded;
 
     [Header("Strings")]
